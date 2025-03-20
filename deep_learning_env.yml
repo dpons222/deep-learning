@@ -12,4 +12,3 @@ dependencies:
   - matplotlib
   - seaborn
   - scipy
-  - cudnn=8.9.7
