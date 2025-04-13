@@ -1,0 +1,39 @@
+{
+    "name": "TensorFlow", // Or any name you like
+    "image": "tensorflow/tensorflow:latest-gpu",
+    "runArgs": [
+      "--gpus=all"
+      // Optional: Add port mapping if you need Jupyter/TensorBoard outside container
+      // "-p", "8888:8888",
+      // "-p", "6006:6006"
+    ],
+  
+    // Mount the folder opened in VS Code into /workspace within the container
+    "workspaceFolder": "/workspace",
+    "workspaceMount": "source=${localWorkspaceFolder},target=/workspace,type=bind,consistency=cached",
+  
+    // try this so that container doesnt create files within its root dir
+    "remoteUser": "vscode",
+
+    "features":{
+      "ghcr.io/devcontainers/features/common-utils:2":{
+        "installGit": "true"
+      }
+    },
+
+    "customizations": {
+      "vscode": {
+        // Add extensions you need inside the container
+        "extensions": [
+          "ms-python.python",         // Essential for Python development
+          "ms-python.vscode-pylance",
+          "ms-python.debugpy",
+          "ms-toolsai.jupyter"        // For Jupyter notebook support
+          // Add other extensions like linters (pylint, flake8), formatters (black), etc.
+        ]
+      }
+    },
+  
+    // Optional: Install requirements after container creation
+    "postCreateCommand": "pip install --user -r requirements.txt"
+  }
