@@ -1,6 +1,6 @@
 {
     "name": "TensorFlow", // Or any name you like
-    "image": "tensorflow/tensorflow:latest-gpu",
+    "image": "tensorflow/tensorflow:2.16.1-gpu",
     "runArgs": [
       "--gpus=all"
       // Optional: Add port mapping if you need Jupyter/TensorBoard outside container
@@ -35,5 +35,5 @@
     },
   
     // Optional: Install requirements after container creation
-    "postCreateCommand": "pip install --user -r requirements.txt"
+    "postCreateCommand": "python -m pip install --upgrade pip setuptools wheel && python -m pip install --user -r requirements.txt"
   }
