@@ -1,0 +1,6 @@
+{
+    "python.analysis.packageIndexDepths": [
+        { "name": "tensorflow", "depth": 10, "includeAllSymbols": true }
+    ]
+    // Add any other settings you might have inside the {}
+}
