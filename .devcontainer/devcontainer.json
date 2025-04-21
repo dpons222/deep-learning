@@ -1,6 +1,6 @@
 {
     "name": "TensorFlow", // Or any name you like
-    "image": "tensorflow/tensorflow:2.16.1-gpu",
+    "image": "tensorflow/tensorflow:2.16.1-gpu-jupyter",
     "runArgs": [
       "--gpus=all"
       // Optional: Add port mapping if you need Jupyter/TensorBoard outside container
